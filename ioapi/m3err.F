@@ -48,10 +48,13 @@ C...........   ARGUMENTS and their descriptions:
 C***********************************************************************
 C   begin body of subroutine  M3ERR
 
+        INTEGER         L
+
+        L = LEN_TRIM( MSGTXT )
         IF ( FATAL ) THEN
-            CALL M3EXIT( CALLER, JDATE, JTIME, MSGTXT, 2 )
+            CALL M3EXIT( CALLER, JDATE, JTIME, MSGTXT(1:L), 2 )
         ELSE    !  not endflag
-            CALL M3WARN( CALLER, JDATE, JTIME, MSGTXT )
+            CALL M3WARN( CALLER, JDATE, JTIME, MSGTXT(1:L) )
         END IF
         RETURN
 

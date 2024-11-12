@@ -1,0 +1,8 @@
+This lists files that have changed from IO/API 3.2 on https://github.com/cjcoats/ioapi-3.2
+to the version used on atmos, version 3.2.1 which contain certain bugfixes.
+
+./ioapi/isdstime.F
+./ioapi/m3err.F
+
+
+
