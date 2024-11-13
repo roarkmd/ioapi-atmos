@@ -47,6 +47,7 @@ REVISION HISTORY:
 #include  <string.h>
 #include  <stdint.h>
 #include "parms3.h"
+#include  <stdlib.h>
 
                          /**  DEAL WITH  FELDMANISMS  OF MANY UN*X F77'S   **/
 
