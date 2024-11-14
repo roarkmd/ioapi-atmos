@@ -38,18 +38,18 @@
 
 .SUFFIXES: .m4 .c .F .f .f90 .F90
 
-BASEDIR = IOAPI_BASE
+BASEDIR = /work/EMIS/users/mroark/development/testing/ioapi-atmos
 SRCDIR  = ${BASEDIR}/m3tools
 IODIR   = ${BASEDIR}/ioapi
 OBJDIR  = ${BASEDIR}/${BIN}
-INSTDIR = BININSTALL
+INSTDIR = /work/EMIS/users/mroark/development/testing/ioapi-atmos/Linux2_x86_64ifx
 
 # Architecture dependent stuff
 # Assumes FC is an f90
 
-MAKEINCLUDE.${BIN}
+include /work/EMIS/users/mroark/development/testing/ioapi-atmos/ioapi/Makeinclude.${BIN}
 
-FFLAGS = -I$(IODIR) ${MODI}$(OBJDIR) IOAPI_DEFS $(ARCHFLAGS) $(PARFLAGS) $(FOPTFLAGS) $(ARCHFLAGS)
+FFLAGS = -I$(IODIR) ${MODI}$(OBJDIR) -DIOAPI_NCF4 $(ARCHFLAGS) $(PARFLAGS) $(FOPTFLAGS) $(ARCHFLAGS)
 
 LDFLAGS = -I$(IODIR) $(DEFINEFLAGS) $(ARCHFLAGS)
 
@@ -62,7 +62,7 @@ LDFLAGS = -I$(IODIR) $(DEFINEFLAGS) $(ARCHFLAGS)
 #
 #  Cygwin libraries need "-lnetcdff.dll -lnetcdf.dll" below
 #
- LIBS = -L${OBJDIR} -lioapi NCFLIBS $(OMPLIBS) $(ARCHLIB) $(ARCHLIBS)
+ LIBS = -L${OBJDIR} -lioapi -L/work/EMIS/users/mroark/development/testing/ioapi-atmos/dependencies/netcdff.4.6.1_intel/lib -lnetcdff -L/work/EMIS/users/mroark/development/testing/ioapi-atmos/dependencies/netcdfc.4.9.2_intel/lib -lnetcdf $(OMPLIBS) $(ARCHLIB) $(ARCHLIBS)
 #LIBS = -L${OBJDIR} -lioapi -lnetcdf  $(OMPLIBS) $(ARCHLIB) $(ARCHLIBS)
 #LIBS = -L${OBJDIR} -lioapi `nf-config --libs` `nc-config --libs` $(OMPLIBS) $(ARCHLIB) $(ARCHLIBS)
 
@@ -118,7 +118,7 @@ all: $(EXE)
 clean:
 	cd ${OBJDIR}; rm $(EXE) $(OBJ)
 
-install: BININSTALL
+install: /work/EMIS/users/mroark/development/testing/ioapi-atmos/Linux2_x86_64ifx
 	echo "Installing M3TOOLS in ${INSTDIR}"
 	cd ${OBJDIR}; cp $(EXE) $(INSTDIR)
 

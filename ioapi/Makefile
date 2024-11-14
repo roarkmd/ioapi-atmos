@@ -77,8 +77,8 @@
 
 .SUFFIXES: .m4 .c .F .f .f90 .F90 .mod
 
-BASEDIR = IOAPI_BASE
-INSTDIR = LIBINSTALL
+BASEDIR = /work/EMIS/users/mroark/development/testing/ioapi-atmos
+INSTDIR = /work/EMIS/users/mroark/development/testing/ioapi-atmos/Linux2_x86_64ifx
 
 IODIR  = ${BASEDIR}/ioapi
 
@@ -90,7 +90,7 @@ FIXDIR  = ${IODIR}/fixed_src
 
 # Architecture dependent stuff
 
-MAKEINCLUDE.$(BIN)
+include /work/EMIS/users/mroark/development/testing/ioapi-atmos/ioapi/Makeinclude.$(BIN)
  
 #DEFINEFLAGS  =                $(ARCHFLAGS) $(PARFLAGS)
 #DEFINEFLAGS = -DIOAPICPL=1   $(ARCHFLAGS) $(PARFLAGS)

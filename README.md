@@ -1,5 +1,5 @@
 # ioapi-3.2.1
-I/O API Version 3.2.1 with specific bugfixes  
+I/O API Version 3.2 with specific bugfixes  
 
 This library provides Fortran and C APIs for environmental model data access
 together with related utility routines and tools for analysis and manipulation
