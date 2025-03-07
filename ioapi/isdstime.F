@@ -114,7 +114,7 @@ C.......   wkday = 1 + mod( k + day, 7 )
             DAY0  = DAY0 - 31                      !  March 1
             DAY0  = DAY0 + 13 - MOD( K + DAY0, 7 ) !  second Sunday in March,
             K     = 1 + MOD( K + DAY1, 7 )         !  day-number 1...7 for OCT31
-            DAY1  = DAY1 +  6 - MOD( K, 7 )        !  first Sunday in November
+            DAY1  = DAY1 +  7 - MOD( K, 7 )        !  first Sunday in November; SMOKE issue #96
         END IF
 
         ISDSTIME = ( ( IDAY .GE. DAY0 ) .AND. ( IDAY .LT. DAY1 ) )
